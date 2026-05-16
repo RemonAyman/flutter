@@ -110,4 +110,20 @@ router.get('/client/:clientId/requests', async (req, res) => {
   }
 });
 
+// @route   PUT /api/services/request/:requestId/status
+router.put('/request/:requestId/status', async (req, res) => {
+  const { status } = req.body;
+  try {
+    const updatedRequest = await Request.findByIdAndUpdate(
+      req.params.requestId,
+      { status },
+      { new: true }
+    );
+    res.json(updatedRequest);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
 module.exports = router;
