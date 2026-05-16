@@ -84,4 +84,3 @@
 - **Design**: Material Design 3 with custom gradients.
 
 ---
-تم التطوير بواسطة **عنتجريل** (AI Assistant) 🚀
